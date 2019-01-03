@@ -15,7 +15,7 @@ import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 def read_dataset1():
-    dataset = pd.read_csv('socialmedia_disaster_tweets.csv',delimiter = ',' ,converters={'text': str}, encoding = "ISO-8859-1")
+    dataset = pd.read_csv('tweets.csv',delimiter = ',' ,converters={'text': str}, encoding = "ISO-8859-1")
     dataset.columns
     dataset = dataset.loc[dataset.choose_one!="Can't Decide",:]
     dataset.reset_index(drop=True, inplace=True)
