@@ -107,16 +107,17 @@ def Bow_Split(corpus,dataset,max_features): #### 2-Bag of words model
     y = labelencoder_y.fit_transform(y)
     return X,y
 
-
+#read original dataset
 dataset = read_dataset1()
 cor = clean_text()
 df = pd.DataFrame({'text':cor})
 df['choose_one'] = dataset['choose_one']
 df.to_csv('clean_df.csv', sep=',', encoding='utf-8')
-
+# read cleaned dataset
 dataset = read_dataset2()
 #class_hist(dataset)
 #missing_values(dataset)
+#Make Word Corpus
 corpus = make_corpus()
 X,y= Bow_Split(corpus,dataset,max_features=500)
 X_train, X_test, y_train, y_test = Test_Train_Split(X,y,test_size = 0.3)
